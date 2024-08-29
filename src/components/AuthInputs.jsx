@@ -3,13 +3,6 @@ import { styled } from 'styled-components';
 
 import Input from './Input';
 
-const ControlContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-`;
-
 const Button = styled.button`
   cursor: pointer;
   background: none;
@@ -69,8 +62,8 @@ export default function AuthInputs() {
   const passwordNotValid = submitted && enteredPassword.trim().length < 6;
 
   return (
-    <div id="auth-inputs">
-      <ControlContainer>        
+    <div id="auth-inputs" className='w-full max-w-sm p-8 mx-auto rounded shadow-md bg-gradient-to-b from-stone-600 to-stone-800'>
+      <div className='flex flex-col gap-2 mb-6'>        
           <Input
             label="Email"
             type="email"            
@@ -85,8 +78,8 @@ export default function AuthInputs() {
               handleInputChange('password', event.target.value)
             }
           />
-      </ControlContainer>
-      <div className="actions">
+      </div>
+      <div className="flex justify-end gap-4">
         <TextButton type="button">
           Create a new account
         </TextButton>
